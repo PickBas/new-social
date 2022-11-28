@@ -6,8 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 @Entity
 @Data
@@ -33,8 +34,8 @@ public class AppUser {
     @Column(length = 60)
     private String country;
     @Temporal(TemporalType.DATE)
-    private Date birth;
+    private LocalDate birth;
     @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
-    private Collection<Role> roles;
+    private Collection<Role> roles = new ArrayList<>();
 }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -19,5 +20,9 @@ public class Role {
     private String name;
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY)
-    private Collection<AppUser> users;
+    private Collection<AppUser> users = new ArrayList<>();
+
+    public void addUser(AppUser user) {
+        users.add(user);
+    }
 }
