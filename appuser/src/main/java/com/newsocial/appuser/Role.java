@@ -1,4 +1,4 @@
-package com.newsocial;
+package com.newsocial.appuser;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
